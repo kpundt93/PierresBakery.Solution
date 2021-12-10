@@ -1,10 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Pastry.Models;
+using PierresBakery.Models;
 
-namespace Pastry.Tests
+namespace PierresBakery.Tests
 {
   [TestClass]
-  public class Pastry
+  public class PastryTests
   {
     // Pastry test methods go here
   }
