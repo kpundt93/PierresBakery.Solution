@@ -10,5 +10,12 @@ namespace PierresBakery.Models
       PastryQty = pastryQty;
       PastryCost = 2;
     }
+
+    public int GetPrice()
+    {
+      int pastryTotal;
+      pastryTotal = PastryQty * PastryCost;
+      return pastryTotal;
+    }
   }
 }
