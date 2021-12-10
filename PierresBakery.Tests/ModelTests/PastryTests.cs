@@ -41,5 +41,12 @@ namespace PierresBakery.Tests
       Pastry newPastry = new Pastry(2);
       Assert.AreEqual(4, newPastry.GetPrice());
     }
+
+    [TestMethod]
+    public void GetPastryTotal_ReturnCostOfThreePastries_Int()
+    {
+      Pastry newPastry = new Pastry(3);
+      Assert.AreEqual(5, newPastry.GetPrice());
+    }
   }
 }
