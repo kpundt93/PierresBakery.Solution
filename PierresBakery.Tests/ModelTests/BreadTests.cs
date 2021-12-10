@@ -1,11 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Bread.Models;
+using PierresBakery.Models;
 
-namespace Bread.Tests
+namespace PierresBakery.Tests
 {
   [TestClass]
   public class BreadTests
   {
-    // Bread test methods go here
+    [TestMethod]
+    public void BreadConstructor_CreatesInstanceOfBread_Bread()
+    {
+      Bread newBread = new Bread();
+      Assert.AreEqual(typeof(Bread), newBread.GetType());
+    }
   }
 }
