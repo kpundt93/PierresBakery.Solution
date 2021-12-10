@@ -13,8 +13,19 @@ namespace PierresBakery.Models
 
     public int GetPrice()
     {
-      int breadTotal = BreadQty * BreadCost;
-      return breadTotal;
+      int breadTotal;
+      int breadDiscount = (BreadQty - (BreadQty % 3)) / 3  * BreadCost;
+
+      if (BreadQty >= 3)
+      {
+        breadTotal = (BreadQty * BreadCost) - breadDiscount;
+        return breadTotal;
+      }
+      else
+      {
+        breadTotal = BreadQty * BreadCost;
+        return breadTotal;
+      }
     }
   }
 }
