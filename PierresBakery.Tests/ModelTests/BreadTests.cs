@@ -36,17 +36,24 @@ namespace PierresBakery.Tests
     }
 
     [TestMethod]
-    public void GetBread_ReturnCostOfTwoLoaves_Int()
+    public void GetBreadTotal_ReturnCostOfTwoLoaves_Int()
     {
       Bread newBread = new Bread(2);
       Assert.AreEqual(10, newBread.GetPrice());
     }
 
     [TestMethod]
-    public void GetBread_ReturnCostOfThreeLoaves_Int()
+    public void GetBreadTotal_ReturnCostOfThreeLoaves_Int()
     {
       Bread newBread = new Bread(3);
       Assert.AreEqual(10, newBread.GetPrice());
+    }
+
+    [TestMethod]
+    public void GetBreadTotal_ReturnCostOfFourLoaves_Int()
+    {
+      Bread newBread = new Bread(4);
+      Assert.AreEqual(15, newBread.GetPrice());
     }
   }
 }
