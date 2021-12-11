@@ -26,19 +26,30 @@ namespace PierresBakery
         Console.WriteLine("- - - - - - - - - - - - - - -");
         Console.WriteLine("- - - - - New order - - - - -");
         Console.WriteLine("- - - - - - - - - - - - - - -");
+
         Console.WriteLine("How many loaves of bread would you like to order?");
-        string breadQtyStr = Console.ReadLine();
-        int breadQty = int.Parse(breadQtyStr);
+        int breadQty;
+        while (!int.TryParse(Console.ReadLine(), out breadQty) || breadQty < 0)
+        {
+          Console.WriteLine("Enter a whole number greater than 0.");
+          Console.WriteLine("How many loaves of bread would you like to order?");
+        }
         Bread newBread = new Bread(breadQty);
         int breadTotal = newBread.GetPrice();
         Console.WriteLine("Bread Total: $" + breadTotal);
+
         Console.WriteLine("- - - - - - - - - - - - - - -");
         Console.WriteLine("How many pastries would you like to order?");
-        string pastryQtyStr = Console.ReadLine();
-        int pastryQty = int.Parse(pastryQtyStr);
+        int pastryQty;
+        while (!int.TryParse(Console.ReadLine(), out pastryQty) || pastryQty < 0)
+        {
+          Console.WriteLine("Enter whole a number greater than 0.");
+          Console.WriteLine("How many pastries would you like to order?");
+        }
         Pastry newPastry = new Pastry(pastryQty);
         int pastryTotal = newPastry.GetPrice();
         Console.WriteLine("Pastry Total: $" + pastryTotal);
+
         Console.WriteLine("- - - - - - - - - - - - - - -");
         int grandTotal = breadTotal + pastryTotal;
         Console.WriteLine("Order total: $" + grandTotal);
